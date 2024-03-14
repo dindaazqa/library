@@ -21,19 +21,19 @@ public class libraryMain {
             int pilih = scanner.nextInt();
 
             if (pilih == 1) {
-                perpustakaan.showType("Teknologi", perpustakaan.buku_teknologi);
+                libraryMain.showType("Teknologi", perpustakaan.buku_teknologi);
             } else if (pilih == 2) {
-                perpustakaan.showType("Filsafat", perpustakaan.buku_filsafat);
+                libraryMain.showType("Filsafat", perpustakaan.buku_filsafat);
             } else if (pilih == 3) {
-                perpustakaan.showType("Sejarah", perpustakaan.buku_sejarah);
+                libraryMain.showType("Sejarah", perpustakaan.buku_sejarah);
             } else if (pilih == 4) {
-                perpustakaan.showType("Agama", perpustakaan.buku_agama);
+                libraryMain.showType("Agama", perpustakaan.buku_agama);
             } else if (pilih == 5) {
-                perpustakaan.showType("Psikologi", perpustakaan.buku_psikologi);
+                libraryMain.showType("Psikologi", perpustakaan.buku_psikologi);
             } else if (pilih == 6) {
-                perpustakaan.showType("Politik", perpustakaan.buku_politik);
+                libraryMain.showType("Politik", perpustakaan.buku_politik);
             } else if (pilih == 7) {
-                perpustakaan.showType("Fiksi", perpustakaan.buku_fiksi);
+                libraryMain.showType("Fiksi", perpustakaan.buku_fiksi);
             } else if (pilih == 8) {
                 System.out.println("Total buku yang ada di perpustakaan ini berjumlah 35 buku.");
             } else if (pilih == 9) {
@@ -43,6 +43,17 @@ public class libraryMain {
             } else {
                 System.out.println("Pilihan tidak valid. Silakan memilih pilihan yang tersedia.");
             }
+        }
+    }
+
+    public static void showType(String category, String[][] books) {
+        System.out.println("\nTabel Buku - " + category);
+        System.out.printf("%-5s%-40s%-20s%-15s\n", "No", "Judul", "Penulis", "Tahun Terbit");
+        System.out.println("-------------------------------------------------------------");
+    
+        for (int i = 0; i < books.length; i++) {
+            String[] book = books[i];
+            System.out.printf("%-5d%-40s%-20s%-15s\n", i + 1, book[1], book[3], book[5]);
         }
     }
 }
